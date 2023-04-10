@@ -18,7 +18,7 @@ class Task(models.Model):
     PRIORITY_LEVEL = (
         ("low", "LOW"),
         ("middle", "MIDDLE"),
-        ("high", "HIGH")
+        ("high", "HIGH"),
     )
 
     name = models.CharField(max_length=255)
