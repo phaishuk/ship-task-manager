@@ -13,6 +13,9 @@ class Position(models.Model):
 class TaskType(models.Model):
     name = models.CharField(max_length=255)
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Task(models.Model):
     PRIORITY_LEVEL = (
