@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_extensions",
+    "sailors_app"
 ]
 
 MIDDLEWARE = [
@@ -68,7 +70,11 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = "ship_task_manager.wsgi.application"
+
+
+AUTH_USER_MODEL = "sailors_app.Sailor"
 
 
 # Database
