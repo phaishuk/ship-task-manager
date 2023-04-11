@@ -1,0 +1,1292 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2023-04-10T21:39:57.032Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "1",
+        "object_repr": "mr_sailor",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Position\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2023-04-10T22:00:58.442Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "2",
+        "object_repr": "hector",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2023-04-10T22:20:19.474Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "2",
+        "object_repr": "hector",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Email address\", \"Staff status\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2023-04-10T22:21:56.707Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "3",
+        "object_repr": "hibbs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2023-04-10T22:22:44.363Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "3",
+        "object_repr": "hibbs",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Position\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2023-04-10T22:25:33.381Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "4",
+        "object_repr": "riddle",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2023-04-10T22:27:17.389Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "5",
+        "object_repr": "skinner",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2023-04-10T22:28:21.318Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "6",
+        "object_repr": "deadman",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2023-04-10T22:32:45.376Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "7",
+        "object_repr": "fred_fred",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2023-04-10T22:35:10.329Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "8",
+        "object_repr": "joe_spanner",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2023-04-10T22:36:17.506Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "9",
+        "object_repr": "stivie",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2023-04-10T22:37:44.629Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "10",
+        "object_repr": "magic_harry",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2023-04-10T22:40:04.365Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "6",
+        "object_repr": "ragetti",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2023-04-10T22:41:42.302Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "11",
+        "object_repr": "tilly",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2023-04-10T22:44:40.219Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "12",
+        "object_repr": "angie",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2023-04-10T22:57:50.053Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Task object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2023-04-10T23:04:52.599Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Task object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2023-04-10T23:06:05.763Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Task object (3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2023-04-10T23:09:11.220Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "Task object (4)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2023-04-10T23:10:52.607Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "Task object (5)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2023-04-11T10:27:10.796Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Management",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2023-04-11T10:32:03.199Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Radar check",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2023-04-11T10:36:00.926Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "Lost keys",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2023-04-11T10:39:32.750Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "8",
+        "object_repr": "Check staff' health",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2023-04-11T10:45:23.359Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "Regular tasks",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2023-04-11T10:45:26.972Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "9",
+        "object_repr": "Troubles on the lower deck",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2023-04-11T10:48:04.677Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "10",
+        "object_repr": "Prepare new menu for staff",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 6,
+        "codename": "add_sailor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 6,
+        "codename": "change_sailor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 6,
+        "codename": "delete_sailor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 6,
+        "codename": "view_sailor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add position",
+        "content_type": 7,
+        "codename": "add_position"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change position",
+        "content_type": 7,
+        "codename": "change_position"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete position",
+        "content_type": 7,
+        "codename": "delete_position"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view position",
+        "content_type": 7,
+        "codename": "view_position"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add task type",
+        "content_type": 8,
+        "codename": "add_tasktype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change task type",
+        "content_type": 8,
+        "codename": "change_tasktype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete task type",
+        "content_type": 8,
+        "codename": "delete_tasktype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view task type",
+        "content_type": 8,
+        "codename": "view_tasktype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add task",
+        "content_type": 9,
+        "codename": "add_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change task",
+        "content_type": 9,
+        "codename": "change_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete task",
+        "content_type": 9,
+        "codename": "delete_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view task",
+        "content_type": 9,
+        "codename": "view_task"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sailors_app",
+        "model": "sailor"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "sailors_app",
+        "model": "position"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "sailors_app",
+        "model": "tasktype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "sailors_app",
+        "model": "task"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qxlf9uujdfab6xdq0c3keoz7s2bpte6o",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyGFsm7w6N1vIAu7SNVAUtqT8d9tkx70Npn3Zt4q0LqUsHaZw8Tqoow6_XaR0lPqDvhB9d50anWZp6h3RR-061tjeV0P9--gUC_bOpMfjMvZ4tkOzhCgJAErPiFYsC7LyD5mwjFZRMNmy8BIHhL4MUf1-QLjhTg6:1plzDF:MQPHscdd5dKwitx9SOkYXJb-NaxfBvw2jLF7PtDYpJs",
+        "expire_date": "2023-04-24T21:38:09.839Z"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 1,
+    "fields": {
+        "name": "Capitan"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 2,
+    "fields": {
+        "name": "Chief capitan's mate"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 3,
+    "fields": {
+        "name": "Second capitan's mate"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 4,
+    "fields": {
+        "name": "Third captains mate"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 5,
+    "fields": {
+        "name": "Deck cadet"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 6,
+    "fields": {
+        "name": "Boatswain"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 7,
+    "fields": {
+        "name": "Able bodied seaman"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 8,
+    "fields": {
+        "name": "Ordinary seaman"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 9,
+    "fields": {
+        "name": "Chief engineer"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 10,
+    "fields": {
+        "name": "Second engineer"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 11,
+    "fields": {
+        "name": "Third engineer"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 12,
+    "fields": {
+        "name": "Medical purser"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 13,
+    "fields": {
+        "name": "Cook"
+    }
+},
+{
+    "model": "sailors_app.position",
+    "pk": 14,
+    "fields": {
+        "name": "Cook assistant"
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$wZb4hshsftX4MssRII0VJN$x+VQS7f09yAM292abGcC5I8gWbfSEUaqIVjm2r2D6ZQ=",
+        "last_login": "2023-04-10T21:38:09Z",
+        "is_superuser": true,
+        "username": "mr_sailor",
+        "first_name": "Jack",
+        "last_name": "Sparrow",
+        "email": "mr_sailor@sparrow.net",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-04-10T20:11:07Z",
+        "position": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$iQ3CywylqRlYYex1lWRBN3$5w78AuyijpBbhzJ+Ex9RRzvxxHEVuwPSLLh+J2BafC8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hector",
+        "first_name": "Hector",
+        "last_name": "Barbossa",
+        "email": "barbossa@blackocean.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:00:58Z",
+        "position": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$tWCIT2QfeGBBU3aVDDyBUg$p6ENNyEzxj670Si0JRp7kyIYDkjO48jB8UX3FTebGus=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hibbs",
+        "first_name": "Djoshami",
+        "last_name": "Hibbs",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:21:56Z",
+        "position": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$5g7lOCluNtOm73SKOUeAl6$cbgnvaTpM+Bhx8vBjsoEkpR4VYkERdP4TzKlu7f9w2E=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "riddle",
+        "first_name": "Marko",
+        "last_name": "Readle",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:25:32.980Z",
+        "position": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$P3XShWrmdBGaRKRWwEsq2l$nTVJ74cgSMYQ5lur5yGeSUuaeBkKd6sym8ienZqzZTs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "skinner",
+        "first_name": "John",
+        "last_name": "Skinner",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:27:16.994Z",
+        "position": 13,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Cj08qJ6INFt1Ay5nKbg7qS$RSx4V6lu+prYlpLJHqzs+XZJ7bNZO9dcSy2WMI5owYw=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ragetti",
+        "first_name": "Carl",
+        "last_name": "Ragetti",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:28:20Z",
+        "position": 14,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$M5FQ2hQcYDKdFSd1PcVADN$/N/gxWfjbXBJ/AiyBk1dm0by65G2bu08ncoFw1/P/wk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "fred_fred",
+        "first_name": "Frederic",
+        "last_name": "Taylor",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:32:44.984Z",
+        "position": 9,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$gUVUNHAqVULaQZM3lsmZPN$MlGetm4N1nZBLRn60XBeuT754p3eMOXerBcXs2fCDVs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "joe_spanner",
+        "first_name": "John",
+        "last_name": "Harway",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:35:09.951Z",
+        "position": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$ANxZFarCGVj1lyUPifsQlq$texXYWcglmeuvR9BGMMWYfB7Zo1K+YRMSMDXi6Vypdc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "stivie",
+        "first_name": "Robert",
+        "last_name": "Stivenson",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:36:17.099Z",
+        "position": 11,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$M9whuS6Lm01hP4iY0EAotP$2NF6D6iDv2zHSRewroiXelBlUs5FCpT28tL5okOFLwA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "magic_harry",
+        "first_name": "Harry",
+        "last_name": "Houdiny",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:37:44.249Z",
+        "position": 6,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$9wBlSjjiHPD1QRogSxnv1E$a5MeMogf09o9kbu1B6pFM1tH2TubQI1XHtDh0sMIvAw=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "tilly",
+        "first_name": "Brad",
+        "last_name": "Tilly",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:41:41.879Z",
+        "position": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.sailor",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$UsWwkglfzKmhHH1vyW4zrI$FKGtjMMPHNh0YeH65HSY2bdpzhIcORefrnplOHEldGU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "angie",
+        "first_name": "Angelica",
+        "last_name": "Sparrow",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-10T22:44:39.795Z",
+        "position": 12,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sailors_app.tasktype",
+    "pk": 1,
+    "fields": {
+        "name": "Cleaning"
+    }
+},
+{
+    "model": "sailors_app.tasktype",
+    "pk": 2,
+    "fields": {
+        "name": "Repair"
+    }
+},
+{
+    "model": "sailors_app.tasktype",
+    "pk": 3,
+    "fields": {
+        "name": "Management"
+    }
+},
+{
+    "model": "sailors_app.tasktype",
+    "pk": 4,
+    "fields": {
+        "name": "Regular tasks"
+    }
+},
+{
+    "model": "sailors_app.tasktype",
+    "pk": 5,
+    "fields": {
+        "name": "Navigation"
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 1,
+    "fields": {
+        "name": "Clean the deck",
+        "description": "A bit dirty on the deck, necessary to clean",
+        "deadline": "2023-04-18",
+        "is_completed": true,
+        "priority": "low",
+        "task_type": 1,
+        "assignees": [
+            10,
+            11
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 2,
+    "fields": {
+        "name": "Create a route for next trip",
+        "description": "Create a route from La Manche to Bosfor",
+        "deadline": "2023-09-08",
+        "is_completed": false,
+        "priority": "high",
+        "task_type": 5,
+        "assignees": [
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 3,
+    "fields": {
+        "name": "Create supper",
+        "description": "Cook eat a bit",
+        "deadline": "2023-04-10",
+        "is_completed": false,
+        "priority": "high",
+        "task_type": 4,
+        "assignees": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 4,
+    "fields": {
+        "name": "Make small maintanance for second engine",
+        "description": "Several days ago it was noticed a bit oil in the down deck, seems to be some of the engine going to damage",
+        "deadline": "2023-05-06",
+        "is_completed": false,
+        "priority": "low",
+        "task_type": 2,
+        "assignees": [
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 5,
+    "fields": {
+        "name": "Make some party on weekend",
+        "description": "After difficult job we have to rest a bit",
+        "deadline": "2023-07-05",
+        "is_completed": false,
+        "priority": "high",
+        "task_type": 3,
+        "assignees": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            6,
+            11,
+            12
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 6,
+    "fields": {
+        "name": "Radar check",
+        "description": "Connection for local station not so good, need to check radar and fix problem if necessary.",
+        "deadline": "2023-04-13",
+        "is_completed": false,
+        "priority": "middle",
+        "task_type": 2,
+        "assignees": [
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 7,
+    "fields": {
+        "name": "Lost keys",
+        "description": "Find lost captains keys",
+        "deadline": "2023-09-16",
+        "is_completed": false,
+        "priority": "middle",
+        "task_type": 4,
+        "assignees": [
+            9,
+            10,
+            11,
+            12
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 8,
+    "fields": {
+        "name": "Check staff' health",
+        "description": "Angie have to check health for all the stuff on the board, we going to go for a long route",
+        "deadline": "2023-08-03",
+        "is_completed": false,
+        "priority": "middle",
+        "task_type": 4,
+        "assignees": [
+            12
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 9,
+    "fields": {
+        "name": "Troubles on the lower deck",
+        "description": "Discussion about yesterday's fight between Harry and Stevie on the lower deck.",
+        "deadline": "2023-08-11",
+        "is_completed": false,
+        "priority": "high",
+        "task_type": 4,
+        "assignees": [
+            9,
+            10
+        ]
+    }
+},
+{
+    "model": "sailors_app.task",
+    "pk": 10,
+    "fields": {
+        "name": "Prepare new menu for staff",
+        "description": "Let's discuss new menu for our stuff. Everyone want to eat good!",
+        "deadline": "2023-11-11",
+        "is_completed": false,
+        "priority": "high",
+        "task_type": 4,
+        "assignees": [
+            2,
+            3,
+            5,
+            6
+        ]
+    }
+}
+]

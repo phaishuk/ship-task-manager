@@ -11,18 +11,17 @@ class SailorAdmin(UserAdmin):
     )
     add_fieldsets = UserAdmin.add_fieldsets + (
         (
-            (
-                "Additional info",
-                {
-                    "fields": (
-                        "first_name",
-                        "last_name",
-                        "position",
-                    )
-                },
-            ),
-        )
+            "Additional info",
+            {
+                "fields": (
+                    "first_name",
+                    "last_name",
+                    "position",
+                )
+            },
+        ),
     )
+    list_filter = ("position",)
 
 
 @admin.register(Task)
