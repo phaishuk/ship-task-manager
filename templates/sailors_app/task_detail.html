@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    {{ task.name }}
+  </h1>
+  <p>Description: ({{ task.description }})</p>
+  <h1>
+    Assignee
+  </h1>
+  <hr>
+  <ul>
+    {% for assignee in task.assignees.all %}
+      <table>
+        <td>
+          <p> <strong>Username:</strong> {{ assignee.username }} <br>
+            <strong>Full name:</strong> ({{ assignee.first_name }} {{ assignee.last_name }}) <br>
+            <strong>Position:</strong> {{ assignee.position }}<br>
+          </p>
+          <hr>
+        </td>
+      </table>
+    {% endfor %}
+{% endblock %}

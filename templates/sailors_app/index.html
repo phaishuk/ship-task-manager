@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Task manager</h1>
+  <p>Welcome to the ship!</p>
+  <h2>Dynamic content</h2>
+  <p>On the board we have:</p>
+  <ul>
+    <li><strong>Crew:</strong> {{ num_sailors }}</li>
+    <li><strong>Tasks:</strong> {{ num_tasks }}</li>
+    <li><strong>Positions on the board:</strong> {{ num_positions }}</li>
+  </ul>
+
+{% endblock %}

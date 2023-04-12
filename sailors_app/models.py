@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 
 class Position(models.Model):
@@ -14,11 +15,14 @@ class Sailor(AbstractUser):
         to=Position,
         on_delete=models.SET_NULL,
         null=True,
-        default="Simple sailor"
+        default="Ord"
     )
 
     def __str__(self):
         return f"{self.username} ({self.position})"
+
+    def get_absolute_url(self):
+        return reverse("sailor-detail", kwargs={"pk": self.pk})
 
 
 class TaskType(models.Model):
@@ -41,7 +45,7 @@ class Task(models.Model):
     is_completed = models.BooleanField()
     priority = models.CharField(max_length=10, choices=PRIORITY_LEVEL)
     task_type = models.ForeignKey(to=TaskType, on_delete=models.CASCADE)
-    assignees = models.ManyToManyField(Sailor, related_name="sailors")
+    assignees = models.ManyToManyField(Sailor, related_name="tasks")
 
     def __str__(self):
         return f"{self.name}"

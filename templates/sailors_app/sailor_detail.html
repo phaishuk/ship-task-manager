@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Username: {{ sailor.username }}
+  </h1>
+
+  <p><strong>First name:</strong> {{ sailor.first_name }}</p>
+  <p><strong>Last name:</strong> {{ sailor.last_name }}</p>
+  <p><strong>Position:</strong> {{ sailor.position }}</p>
+
+  <div class="ml-3">
+    <h4>Tasks assigned to {{ sailor.first_name }}:</h4>
+
+    {% for task in sailor.tasks.all %}
+        <hr>
+        <p><strong>Name:</strong> {{ task.name }}</p>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p class="text-muted"><strong>Id:</strong> {{task.id}}</p>
+
+    {% empty %}
+      <p>No tasks assigned!</p>
+    {% endfor %}
+  </div>
+{% endblock %}

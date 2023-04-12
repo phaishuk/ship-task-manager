@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if sailor_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Position</th>
+      </tr>
+    {% for sailor in sailor_list %}
+      <tr>
+        <td>{{ sailor.id }}</td>
+        <td>
+          <a href="{{ sailor.get_absolute_url }}">
+            {{ sailor.username }}
+            {% if user == sailor %} (Me){% endif %}
+          </a>
+        </td>
+        <td>{{ sailor.first_name }}</td>
+        <td>{{ sailor.last_name }}</td>
+        <td>{{ sailor.position }}</td>
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no sailors in the service.</p>
+    {% endif %}
+{% endblock %}

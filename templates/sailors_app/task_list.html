@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Tasks list
+  </h1>
+  {% if  task_list %}
+    <ul>
+      {% for task in task_list %}
+        <li>
+          <a href="{% url "task-detail" pk=task.id %} ">{{ task.id }}</a>
+          {{ task.name }} ({{ task.priority }})
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no cars in taxi</p>
+  {% endif %}
+{% endblock %}
