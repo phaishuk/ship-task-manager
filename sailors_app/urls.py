@@ -6,6 +6,7 @@ from sailors_app.views import (
     TaskListView,
     TaskDetailView,
     PositionListView,
+    PositionDetailView,
     SailorListView,
     SailorDetailView,
 )
@@ -46,5 +47,10 @@ urlpatterns = [
         "position/",
         PositionListView.as_view(),
         name="position-list"
+    ),
+    path(
+        "position/<int:pk>",
+        PositionDetailView.as_view(),
+        name="position-detail"
     ),
 ]

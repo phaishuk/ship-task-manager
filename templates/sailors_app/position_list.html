@@ -18,7 +18,7 @@
               {{ position.id }}
           </td>
           <td>
-              {{ position.name }}
+            <a href="{% url "sailors_app:position-detail" pk=position.id %} "> {{ position.name }}</a>
           </td>
         </tr>
       {% endfor %}
