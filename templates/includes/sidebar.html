@@ -1,6 +1,15 @@
 <ul class="sidebar-nav list-group">
-  <li class="list-group-item"><a href="{% url 'index' %}">Home</a></li>
-  <li class="list-group-item"><a href="{% url 'sailor-list' %}">All sailors</a></li>
-  <li class="list-group-item"><a href="{% url 'task-list' %}">All tasks</a></li>
-  <li class="list-group-item"><a href="{% url 'position-list' %}">All positions</a></li>
+    {% if user.is_authenticated %}
+      <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
+      <li class="list-group-item"><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
+    {% else %}
+      <li class="list-group-item"><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
+    {% endif %}
+
+  <ul class="sidebar-nav list-group">
+    <li class="list-group-item"><a href="{% url 'sailors_app:index' %}">Home</a></li>
+    <li class="list-group-item"><a href="{% url 'sailors_app:sailor-list' %}">All sailors</a></li>
+    <li class="list-group-item"><a href="{% url 'sailors_app:task-list' %}">All tasks</a></li>
+    <li class="list-group-item"><a href="{% url 'sailors_app:position-list' %}">All positions</a></li>
+  </ul>
 </ul>

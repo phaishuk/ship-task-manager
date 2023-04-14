@@ -1,9 +1,13 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from sailors_app.models import Task, Sailor, Position
 
 
+@login_required
 def index(request):
     num_tasks = Task.objects.count()
     num_sailors = Sailor.objects.count()
@@ -18,28 +22,28 @@ def index(request):
     return render(request, "sailors_app/index.html", context=context)
 
 
-class SailorListView(generic.ListView):
+class SailorListView(LoginRequiredMixin, generic.ListView):
     model = Sailor
-    fields = "__all__"
+    fields = ("id", "username",)
 
 
-class SailorDetailView(generic.DetailView):
+class SailorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Sailor
 
 
-class TaskListView(generic.ListView):
+class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     fields = "__all__"
 
 
-class TaskDetailView(generic.DetailView):
+class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
 
 
-class PositionListView(generic.ListView):
+class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
     fields = "__all__"
 
 
-class PositionDetailView(generic.DetailView):
+class PositionDetailView(LoginRequiredMixin, generic.DetailView):
     model = Position

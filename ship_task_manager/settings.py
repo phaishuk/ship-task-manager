@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_extensions",
+    "debug_toolbar",
+    "crispy_forms",
     "sailors_app"
 ]
 
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "ship_task_manager.urls"
@@ -56,8 +59,7 @@ ROOT_URLCONF = "ship_task_manager.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -75,6 +77,9 @@ WSGI_APPLICATION = "ship_task_manager.wsgi.application"
 
 
 AUTH_USER_MODEL = "sailors_app.Sailor"
+
+
+LOGIN_REDIRECT_URL = '/'
 
 
 # Database

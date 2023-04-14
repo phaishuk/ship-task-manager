@@ -22,7 +22,7 @@ class Sailor(AbstractUser):
         return f"{self.username} ({self.position})"
 
     def get_absolute_url(self):
-        return reverse("sailor-detail", kwargs={"pk": self.pk})
+        return reverse("sailors_app:sailor-detail", kwargs={"pk": self.pk})
 
 
 class TaskType(models.Model):

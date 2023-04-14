@@ -8,7 +8,7 @@
     <ul>
       {% for task in task_list %}
         <li>
-          <a href="{% url "task-detail" pk=task.id %} ">{{ task.id }}</a>
+          <a href="{% url "sailors_app:task-detail" pk=task.id %} ">{{ task.id }}</a>
           {{ task.name }} ({{ task.priority }})
         </li>
       {% endfor %}

@@ -14,52 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
 
-from sailors_app.views import (
-    index,
-    TaskListView,
-    TaskDetailView,
-    PositionListView,
-    PositionDetailView,
-    SailorListView,
-    SailorDetailView,
-)
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    path(
-        "admin/",
-        admin.site.urls
-    ),
-    path(
-        "",
-        index,
-        name="index"
-    ),
-    path(
-        "sailor/",
-        SailorListView.as_view(),
-        name="sailor-list"
-    ),
-    path(
-        "sailor/<int:pk>",
-        SailorDetailView.as_view(),
-        name="sailor-detail"
-    ),
-    path(
-        "task/",
-        TaskListView.as_view(),
-        name="task-list"
-    ),
-    path(
-        "task/<int:pk>",
-        TaskDetailView.as_view(),
-        name="task-detail"
-    ),
-    path(
-        "position/",
-        PositionListView.as_view(),
-        name="position-list"
-    ),
-]
+    path("admin/", admin.site.urls),
+    path("", include("sailors_app.urls", namespace="sailors_app")),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("__debug__/", include("debug_toolbar.urls")),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
