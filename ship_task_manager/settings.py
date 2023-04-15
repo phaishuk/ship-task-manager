@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     "django_extensions",
     "debug_toolbar",
     "crispy_forms",
-    "sailors_app"
+    "crispy_bootstrap4",
+    "sailors_app",
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,9 @@ TEMPLATES = [
         },
     },
 ]
+
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
 WSGI_APPLICATION = "ship_task_manager.wsgi.application"

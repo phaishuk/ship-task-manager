@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from sailors_app.models import Task, Sailor, Position
@@ -29,7 +30,21 @@ class SailorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Sailor
 
 
-# class SailorCreateView()
+class SailorCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Sailor
+    fields = "__all__"
+    success_url = reverse_lazy("sailors_app:sailor-list")
+
+
+class SailorUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Sailor
+    fields = "__all__"
+    success_url = reverse_lazy("sailors_app:sailor-list")
+
+
+class SailorDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Sailor
+    success_url = reverse_lazy("sailors_app:sailor-list")
 
 
 class TaskListView(LoginRequiredMixin, generic.ListView):

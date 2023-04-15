@@ -8,7 +8,7 @@ from sailors_app.views import (
     PositionListView,
     PositionDetailView,
     SailorListView,
-    SailorDetailView,
+    SailorDetailView, SailorCreateView, SailorUpdateView, SailorDeleteView,
 )
 
 app_name = "sailors_app"
@@ -52,5 +52,20 @@ urlpatterns = [
         "position/<int:pk>",
         PositionDetailView.as_view(),
         name="position-detail"
+    ),
+    path(
+        "sailor/create",
+        SailorCreateView.as_view(),
+        name="sailor-create"
+    ),
+    path(
+        "sailor/<int:pk>/update/",
+        SailorUpdateView.as_view(),
+        name="sailor-update"
+    ),
+    path(
+        "sailor/<int:pk>/delete/",
+        SailorDeleteView.as_view(),
+        name="sailor-delete"
     ),
 ]

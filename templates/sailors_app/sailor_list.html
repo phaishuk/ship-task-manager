@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <h1>
+     <a href="{% url 'sailors_app:sailor-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
 
     {% if sailor_list %}
     <table class="table">
@@ -10,6 +15,8 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Position</th>
+        <th>Update</th>
+        <th>Delete</th>
       </tr>
     {% for sailor in sailor_list %}
       <tr>
@@ -23,6 +30,16 @@
         <td>{{ sailor.first_name }}</td>
         <td>{{ sailor.last_name }}</td>
         <td>{{ sailor.position }}</td>
+        <td>
+          <a href="{% url 'sailors_app:sailor-update' pk=sailor.id %}">
+            Update
+          </a>
+        </td>
+        <td>
+          <a href="{% url 'sailors_app:sailor-delete' pk=sailor.id %}">
+            Delete
+          </a>
+        </td>
       </tr>
     {% endfor %}
 
