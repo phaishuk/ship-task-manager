@@ -13,10 +13,14 @@ def index(request):
     num_sailors = Sailor.objects.count()
     num_positions = Position.objects.count()
 
+    num_visits = request.session.get("num_visits", 0)
+    request.session["num_visits"] = num_visits + 1
+
     context = {
         "num_tasks": num_tasks,
         "num_sailors": num_sailors,
         "num_positions": num_positions,
+        "num_visits": num_visits + 1,
     }
 
     return render(request, "sailors_app/index.html", context=context)
