@@ -5,15 +5,50 @@
     Tasks list
   </h1>
   {% if  task_list %}
-    <ul>
-      {% for task in task_list %}
-        <li>
-          <a href="{% url "sailors_app:task-detail" pk=task.id %} ">{{ task.id }}</a>
-          {{ task.name }} ({{ task.priority }})
-        </li>
-      {% endfor %}
-    </ul>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>Priority</th>
+        <th>Is_completed</th>
+        <th>Deadline</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
+      </tr>
+    {% for task in task_list %}
+      <tr>
+        <td>
+          {{ task.id }}
+        </td>
+        <td>
+          <a href="{% url "sailors_app:task-detail" pk=task.id %} ">{{ task.name }}</a>
+        </td>
+        <td>
+          {{ task.priority }}
+        </td>
+        <td>
+          {{ task.is_completed }}
+        </td>
+        <td>
+          {{ task.deadline }}
+        </td>
+        <td>
+          <a href="{% url 'sailors_app:task-update' pk=task.id %}">
+            Update
+          </a>
+        </td>
+        <td>
+          <a href="{% url 'sailors_app:task-delete' pk=task.id %}">
+            Delete
+          </a>
+
+        </td>
+      </tr>
+
+    {% endfor %}
+    </table>
+
   {% else %}
-    <p>There are no cars in taxi</p>
+    <p>There are no tasks on the service</p>
   {% endif %}
 {% endblock %}

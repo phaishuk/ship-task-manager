@@ -55,9 +55,43 @@ class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
 
 
+class TaskCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("sailors_app:task-list")
+
+
+class TaskUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("sailors_app:task-list")
+
+
+class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Task
+    success_url = reverse_lazy("sailors_app:task-list")
+
+
 class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
 
 
 class PositionDetailView(LoginRequiredMixin, generic.DetailView):
     model = Position
+
+
+class PositionCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Position
+    fields = "__all__"
+    success_url = reverse_lazy("sailors_app:position-list")
+
+
+class PositionUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Position
+    fields = "__all__"
+    success_url = reverse_lazy("sailors_app:position-list")
+
+
+class PositionDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Position
+    success_url = reverse_lazy("sailors_app:position-list")

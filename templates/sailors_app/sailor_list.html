@@ -2,10 +2,11 @@
 
 {% block content %}
   <h1>
-     <a href="{% url 'sailors_app:sailor-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
+    Sailors list
   </h1>
+   <a href="{% url 'sailors_app:sailor-create' %}" class="btn btn-primary link-to-page">
+      Create
+   </a>
 
     {% if sailor_list %}
     <table class="table">

@@ -3,12 +3,12 @@ from django.urls import path
 
 from sailors_app.views import (
     index,
-    TaskListView,
-    TaskDetailView,
-    PositionListView,
-    PositionDetailView,
-    SailorListView,
-    SailorDetailView, SailorCreateView, SailorUpdateView, SailorDeleteView,
+    TaskListView, TaskDetailView, TaskCreateView, TaskUpdateView,
+    TaskDeleteView,
+    PositionListView, PositionDetailView, PositionCreateView,
+    PositionUpdateView, PositionDeleteView,
+    SailorListView, SailorDetailView, SailorCreateView, SailorUpdateView,
+    SailorDeleteView,
 )
 
 app_name = "sailors_app"
@@ -24,37 +24,17 @@ urlpatterns = [
         name="index"
     ),
     path(
-        "sailor/",
+        "sailors/",
         SailorListView.as_view(),
         name="sailor-list"
     ),
     path(
-        "sailor/<int:pk>",
+        "sailor/<int:pk>/",
         SailorDetailView.as_view(),
         name="sailor-detail"
     ),
     path(
-        "task/",
-        TaskListView.as_view(),
-        name="task-list"
-    ),
-    path(
-        "task/<int:pk>",
-        TaskDetailView.as_view(),
-        name="task-detail"
-    ),
-    path(
-        "position/",
-        PositionListView.as_view(),
-        name="position-list"
-    ),
-    path(
-        "position/<int:pk>",
-        PositionDetailView.as_view(),
-        name="position-detail"
-    ),
-    path(
-        "sailor/create",
+        "sailor/create/",
         SailorCreateView.as_view(),
         name="sailor-create"
     ),
@@ -67,5 +47,55 @@ urlpatterns = [
         "sailor/<int:pk>/delete/",
         SailorDeleteView.as_view(),
         name="sailor-delete"
+    ),
+    path(
+        "tasks/",
+        TaskListView.as_view(),
+        name="task-list"
+    ),
+    path(
+        "task/<int:pk>/",
+        TaskDetailView.as_view(),
+        name="task-detail"
+    ),
+    path(
+        "task/create/",
+        TaskCreateView.as_view(),
+        name="task-create"
+    ),
+    path(
+        "task/<int:pk>/update/",
+        TaskUpdateView.as_view(),
+        name="task-update"
+    ),
+    path(
+        "task/<int:pk>/delete/",
+        TaskDeleteView.as_view(),
+        name="task-delete"
+    ),
+    path(
+        "positions/",
+        PositionListView.as_view(),
+        name="position-list"
+    ),
+    path(
+        "position/<int:pk>/",
+        PositionDetailView.as_view(),
+        name="position-detail"
+    ),
+    path(
+        "position/create/",
+        PositionCreateView.as_view(),
+        name="position-create"
+    ),
+    path(
+        "position/<int:pk>/update/",
+        PositionUpdateView.as_view(),
+        name="position-update"
+    ),
+    path(
+        "position/<int:pk>/delete/",
+        PositionDeleteView.as_view(),
+        name="position-delete"
     ),
 ]
