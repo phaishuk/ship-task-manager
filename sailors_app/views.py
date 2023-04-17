@@ -24,6 +24,7 @@ def index(request):
 
 class SailorListView(LoginRequiredMixin, generic.ListView):
     model = Sailor
+    paginate_by = 5
 
 
 class SailorDetailView(LoginRequiredMixin, generic.DetailView):
@@ -49,7 +50,7 @@ class SailorDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
-
+    paginate_by = 5
 
 class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
@@ -74,7 +75,7 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
-
+    paginate_by = 5
 
 class PositionDetailView(LoginRequiredMixin, generic.DetailView):
     model = Position
