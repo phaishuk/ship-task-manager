@@ -13,9 +13,8 @@ class Position(models.Model):
 class Sailor(AbstractUser):
     position = models.ForeignKey(
         to=Position,
-        on_delete=models.SET_NULL,
-        null=True,
-        default="Ord"
+        on_delete=models.SET_DEFAULT,
+        default=8
     )
 
     def __str__(self):

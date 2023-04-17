@@ -807,7 +807,7 @@
     "model": "sailors_app.position",
     "pk": 8,
     "fields": {
-        "name": "Ordinary seaman"
+        "name": "Ordinary sailor"
     }
 },
 {
