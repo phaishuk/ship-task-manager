@@ -91,3 +91,36 @@ class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = "__all__"
+
+
+class SearchSailors(forms.Form):
+    first_name = forms.CharField(
+        max_length=50,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by sailor's name"}
+        ),
+    )
+
+
+class SearchTasks(forms.Form):
+    name = forms.CharField(
+        max_length=50,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by task's name"}
+        ),
+    )
+
+
+class SearchPositions(forms.Form):
+    name = forms.CharField(
+        max_length=50,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by position's name"}
+        ),
+    )

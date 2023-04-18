@@ -7,7 +7,7 @@
    <a href="{% url 'sailors_app:sailor-create' %}" class="btn btn-primary link-to-page">
       Create
    </a>
-
+      {% include "includes/search_input_form_sailor.html" %}
     {% if sailor_list %}
     <table class="table">
       <tr>

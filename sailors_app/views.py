@@ -5,7 +5,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from sailors_app.forms import (
-    SailorCreationForm, SailorUpdateForm, TaskForm
+    SailorCreationForm, SailorUpdateForm, TaskForm, SearchSailors,
+    SearchPositions, SearchTasks
 )
 from sailors_app.models import Task, Sailor, Position
 
@@ -33,9 +34,28 @@ class SailorListView(LoginRequiredMixin, generic.ListView):
     model = Sailor
     paginate_by = 5
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(SailorListView, self).get_context_data(**kwargs)
+
+        title = self.request.GET.get("title", "")
+        context["first_name"] = SearchSailors(initial={
+            "title": title
+        })
+
+        return context
+
+    def get_queryset(self):
+        queryset = Sailor.objects.all().select_related("position")
+        first_name = self.request.GET.get("first_name")
+
+        if first_name:
+            return queryset.filter(first_name__icontains=first_name)
+        return queryset
+
 
 class SailorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Sailor
+    queryset = Sailor.objects.prefetch_related("tasks__assignees")
 
 
 class SailorCreateView(LoginRequiredMixin, generic.CreateView):
@@ -59,10 +79,27 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     paginate_by = 5
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(TaskListView, self).get_context_data(**kwargs)
+
+        title = self.request.GET.get("title", "")
+        context["name"] = SearchTasks(initial={
+            "title": title
+        })
+
+        return context
+
+    def get_queryset(self):
+        queryset = Task.objects.all()
+        name = self.request.GET.get("name")
+
+        if name:
+            return queryset.filter(name__icontains=name)
+        return queryset
+
 
 class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
-
 
 class TaskCreateView(LoginRequiredMixin, generic.CreateView):
     model = Task
@@ -84,6 +121,24 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
 class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
     paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(PositionListView, self).get_context_data(**kwargs)
+
+        title = self.request.GET.get("title", "")
+        context["name"] = SearchPositions(initial={
+            "title": title
+        })
+
+        return context
+
+    def get_queryset(self):
+        queryset = Position.objects.all()
+        name = self.request.GET.get("name")
+
+        if name:
+            return queryset.filter(name__icontains=name)
+        return queryset
 
 
 class PositionDetailView(LoginRequiredMixin, generic.DetailView):

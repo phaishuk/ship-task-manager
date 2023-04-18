@@ -7,7 +7,7 @@
   <a href="{% url 'sailors_app:position-create' %}" class="btn btn-primary link-to-page">
       Create
   </a>
-
+    {% include "includes/search_input_form_position&task.html" %}
   {% if position_list %}
     <table class="table">
       <tr>
@@ -36,6 +36,6 @@
     </table>
 
   {% else %}
-      <p>There are no manufacturers in the service.</p>
+      <p>There are no positions in the service.</p>
   {% endif %}
 {% endblock %}
