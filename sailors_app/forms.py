@@ -35,13 +35,46 @@ class SailorCreationForm(UserCreationForm):
         return validate_board_number(board_number)
 
 
-class SailorBoardNumberUpdateForm(forms.ModelForm):
+class SailorUpdateForm(forms.ModelForm):
+    old_password = forms.CharField(widget=forms.PasswordInput)
+    new_password = forms.CharField(widget=forms.PasswordInput)
+    confirm_password = forms.CharField(widget=forms.PasswordInput)
+
     class Meta:
         model = Sailor
         fields = (
-            "username", "password", "first_name", "last_name",
-            "email", "position", "board_number",
+            "username", "old_password", "new_password", "confirm_password",
+            "first_name", "last_name", "email", "position", "board_number",
         )
+
+    def clean_old_password(self):
+        old_password = self.cleaned_data.get("old_password")
+        if not self.instance.check_password(old_password):
+            raise forms.ValidationError(
+                "The old password is incorrect."
+            )
+        return old_password
+
+    def clean(self):
+        cleaned_data = super().clean()
+        new_password = cleaned_data.get("new_password")
+        confirm_password = cleaned_data.get("confirm_password")
+        if new_password and confirm_password and (
+                new_password != confirm_password
+        ):
+            raise forms.ValidationError(
+                "The new passwords do not match."
+            )
+        return cleaned_data
+
+    def save(self, commit=True):
+        sailor = super().save(commit=False)
+        new_password = self.cleaned_data.get("new_password")
+        if new_password:
+            sailor.set_password(new_password)
+        if commit:
+            sailor.save()
+        return sailor
 
     def clean_board_number(self):
         board_number = self.cleaned_data["board_number"]

@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from sailors_app.forms import (
-    SailorCreationForm, SailorBoardNumberUpdateForm, TaskForm
+    SailorCreationForm, SailorUpdateForm, TaskForm
 )
 from sailors_app.models import Task, Sailor, Position
 
@@ -46,7 +46,7 @@ class SailorCreateView(LoginRequiredMixin, generic.CreateView):
 
 class SailorUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Sailor
-    form_class = SailorBoardNumberUpdateForm
+    form_class = SailorUpdateForm
     success_url = reverse_lazy("sailors_app:sailor-list")
 
 
