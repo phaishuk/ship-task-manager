@@ -748,6 +748,14 @@
 },
 {
     "model": "sessions.session",
+    "pk": "0o8epvg3dvoulzwzm58t7tx44arpted6",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pCBwhRcuvcMZOiAVA0kpV0Z765NutDtf-_9lwi0rSVsPS1hZnEWSpx-t0jTI9Ud8J3qrcmp1XWZo9wVedAur43T83K4fweFevnWHjEqw9owaICBxsyA1rDzOWelMUaDWrnsRp-dY5U4kbdk0GqEAbR4fwDKczcZ:1poYgK:5YHiAWO61893RaHPcdq-US26tr4D-bXc2AwEX3gp9G8",
+        "expire_date": "2023-05-01T23:54:48.799Z"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "qxlf9uujdfab6xdq0c3keoz7s2bpte6o",
     "fields": {
         "session_data": ".eJxVjMEOwiAQRP-FsyGFsm7w6N1vIAu7SNVAUtqT8d9tkx70Npn3Zt4q0LqUsHaZw8Tqoow6_XaR0lPqDvhB9d50anWZp6h3RR-061tjeV0P9--gUC_bOpMfjMvZ4tkOzhCgJAErPiFYsC7LyD5mwjFZRMNmy8BIHhL4MUf1-QLjhTg6:1plzDF:MQPHscdd5dKwitx9SOkYXJb-NaxfBvw2jLF7PtDYpJs",
@@ -833,13 +841,6 @@
 },
 {
     "model": "sailors_app.position",
-    "pk": 12,
-    "fields": {
-        "name": "Medical purser"
-    }
-},
-{
-    "model": "sailors_app.position",
     "pk": 13,
     "fields": {
         "name": "Cook"
@@ -853,11 +854,18 @@
     }
 },
 {
+    "model": "sailors_app.position",
+    "pk": 15,
+    "fields": {
+        "name": "Medical purser"
+    }
+},
+{
     "model": "sailors_app.sailor",
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$600000$wZb4hshsftX4MssRII0VJN$x+VQS7f09yAM292abGcC5I8gWbfSEUaqIVjm2r2D6ZQ=",
-        "last_login": "2023-04-10T21:38:09Z",
+        "last_login": "2023-04-17T23:54:48.771Z",
         "is_superuser": true,
         "username": "mr_sailor",
         "first_name": "Jack",
@@ -867,6 +875,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T20:11:07Z",
         "position": 1,
+        "board_number": "$CV_255900",
         "groups": [],
         "user_permissions": []
     }
@@ -886,6 +895,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:00:58Z",
         "position": 1,
+        "board_number": "$QB_169969",
         "groups": [],
         "user_permissions": []
     }
@@ -905,6 +915,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:21:56Z",
         "position": 2,
+        "board_number": "$LD_134360",
         "groups": [],
         "user_permissions": []
     }
@@ -924,6 +935,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:25:32.980Z",
         "position": 3,
+        "board_number": "$DD_722153",
         "groups": [],
         "user_permissions": []
     }
@@ -943,6 +955,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:27:16.994Z",
         "position": 13,
+        "board_number": "$TH_869107",
         "groups": [],
         "user_permissions": []
     }
@@ -962,6 +975,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:28:20Z",
         "position": 14,
+        "board_number": "$DW_438716",
         "groups": [],
         "user_permissions": []
     }
@@ -981,6 +995,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:32:44.984Z",
         "position": 9,
+        "board_number": "$AY_714272",
         "groups": [],
         "user_permissions": []
     }
@@ -1000,6 +1015,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:35:09.951Z",
         "position": 10,
+        "board_number": "$TX_908019",
         "groups": [],
         "user_permissions": []
     }
@@ -1019,6 +1035,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:36:17.099Z",
         "position": 11,
+        "board_number": "$PO_517872",
         "groups": [],
         "user_permissions": []
     }
@@ -1038,6 +1055,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:37:44.249Z",
         "position": 6,
+        "board_number": "$DK_717411",
         "groups": [],
         "user_permissions": []
     }
@@ -1057,6 +1075,7 @@
         "is_active": true,
         "date_joined": "2023-04-10T22:41:41.879Z",
         "position": 8,
+        "board_number": "$ZT_469881",
         "groups": [],
         "user_permissions": []
     }
@@ -1074,8 +1093,9 @@
         "email": "",
         "is_staff": false,
         "is_active": true,
-        "date_joined": "2023-04-10T22:44:39.795Z",
-        "position": 12,
+        "date_joined": "2023-04-10T22:44:39Z",
+        "position": 15,
+        "board_number": "$HC_390372",
         "groups": [],
         "user_permissions": []
     }
@@ -1142,9 +1162,9 @@
         "priority": "high",
         "task_type": 5,
         "assignees": [
+            8,
             2,
-            3,
-            8
+            3
         ]
     }
 },
@@ -1196,11 +1216,11 @@
             3,
             4,
             5,
+            6,
             7,
             8,
             9,
             10,
-            6,
             11,
             12
         ]
