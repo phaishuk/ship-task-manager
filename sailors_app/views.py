@@ -4,6 +4,9 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
+from sailors_app.forms import (
+    SailorCreationForm, SailorBoardNumberUpdateForm, TaskForm
+)
 from sailors_app.models import Task, Sailor, Position
 
 
@@ -37,13 +40,13 @@ class SailorDetailView(LoginRequiredMixin, generic.DetailView):
 
 class SailorCreateView(LoginRequiredMixin, generic.CreateView):
     model = Sailor
-    fields = "__all__"
+    form_class = SailorCreationForm
     success_url = reverse_lazy("sailors_app:sailor-list")
 
 
 class SailorUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Sailor
-    fields = "__all__"
+    form_class = SailorBoardNumberUpdateForm
     success_url = reverse_lazy("sailors_app:sailor-list")
 
 
@@ -56,13 +59,14 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     paginate_by = 5
 
+
 class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
 
 
 class TaskCreateView(LoginRequiredMixin, generic.CreateView):
     model = Task
-    fields = "__all__"
+    form_class = TaskForm
     success_url = reverse_lazy("sailors_app:task-list")
 
 
@@ -80,6 +84,7 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
 class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
     paginate_by = 5
+
 
 class PositionDetailView(LoginRequiredMixin, generic.DetailView):
     model = Position

@@ -4,6 +4,9 @@
   <h1>
     Tasks list
   </h1>
+  <a href="{% url 'sailors_app:task-create' %}" class="btn btn-primary link-to-page">
+    Create
+  </a>
   {% if  task_list %}
     <table class="table">
       <tr>

@@ -16,7 +16,7 @@ class Sailor(AbstractUser):
         on_delete=models.SET_DEFAULT,
         default=8
     )
-    board_number = models.CharField(max_length=255)
+    board_number = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
         return f"{self.username} ({self.position})"
