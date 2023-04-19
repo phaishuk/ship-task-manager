@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Sailor, TaskType, Task
+from .models import Sailor, TaskType, Task, Position
 
 
 @admin.register(Sailor)
 class SailorAdmin(UserAdmin):
-    list_display = UserAdmin.list_display + ("position",)
+    list_display = UserAdmin.list_display + ("position", "board_number",)
     fieldsets = UserAdmin.fieldsets + (
-        (("Additional info", {"fields": ("position",)}),)
+        (("Additional info", {"fields": ("position", "board_number",)}),)
     )
     add_fieldsets = UserAdmin.add_fieldsets + (
         (
@@ -17,6 +17,7 @@ class SailorAdmin(UserAdmin):
                     "first_name",
                     "last_name",
                     "position",
+                    "board_number",
                 )
             },
         ),
@@ -30,4 +31,11 @@ class SailorAdmin(admin.ModelAdmin):
     list_filter = ("priority",)
 
 
-admin.site.register(TaskType)
+@admin.register(Position)
+class SailorAdmin(admin.ModelAdmin):
+    search_fields = ("name",)
+
+
+@admin.register(TaskType)
+class SailorAdmin(admin.ModelAdmin):
+    search_fields = ("name",)
