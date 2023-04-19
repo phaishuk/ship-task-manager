@@ -9,6 +9,7 @@ from sailors_app.views import (
     PositionUpdateView, PositionDeleteView,
     SailorListView, SailorDetailView, SailorCreateView, SailorUpdateView,
     SailorDeleteView,
+    toggle_assign_to_task,
 )
 
 app_name = "sailors_app"
@@ -72,6 +73,11 @@ urlpatterns = [
         "task/<int:pk>/delete/",
         TaskDeleteView.as_view(),
         name="task-delete"
+    ),
+    path(
+        "task/<int:pk>/toggle-assign/",
+        toggle_assign_to_task,
+        name="toggle-task-assign",
     ),
     path(
         "positions/",

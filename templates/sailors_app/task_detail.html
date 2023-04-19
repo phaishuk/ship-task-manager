@@ -4,10 +4,19 @@
   <h1>
     {{ task.name }}
   </h1>
-  <p>Description: ({{ task.description }})</p>
+    <p>Description: ({{ task.description }})</p>
   <h1>
     Assignee
   </h1>
+    {% if task in user.tasks.all %}
+      <a href="{% url 'sailors_app:toggle-task-assign' pk=task.id %}" class="btn btn-danger link-to-page">
+        Delete me from this task
+      </a>
+    {% else %}
+      <a href="{% url 'sailors_app:toggle-task-assign' pk=task.id %}" class="btn btn-success link-to-page">
+        Assign me to this task
+      </a>
+    {% endif %}
   <hr>
   <ul>
     {% for assignee in task.assignees.all %}
