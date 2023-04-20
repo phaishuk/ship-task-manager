@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 
 from sailors_app.views import (
-    index,
+    index, user_tasks,
     TaskListView, TaskDetailView, TaskCreateView, TaskUpdateView,
     TaskDeleteView,
     PositionListView, PositionDetailView, PositionCreateView,
@@ -23,6 +23,11 @@ urlpatterns = [
         "",
         index,
         name="index"
+    ),
+    path(
+        "user_tasks/",
+        user_tasks,
+        name="user_tasks"
     ),
     path(
         "sailors/",

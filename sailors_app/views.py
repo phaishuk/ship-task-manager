@@ -31,6 +31,28 @@ def index(request):
     return render(request, "sailors_app/index.html", context=context)
 
 
+@login_required
+def toggle_assign_to_task(request, pk):
+    sailor = Sailor.objects.get(id=request.user.id)
+    if (
+        Task.objects.get(id=pk) in sailor.tasks.all()
+    ):
+        sailor.tasks.remove(pk)
+    else:
+        sailor.tasks.add(pk)
+    return HttpResponseRedirect(reverse_lazy(
+        "sailors_app:task-detail", args=[pk])
+    )
+
+
+@login_required
+def user_tasks(request):
+    sailor = Sailor.objects.get(id=request.user.id)
+    tasks = sailor.tasks.all()
+    context = {'tasks': tasks}
+    return render(request, 'sailors_app/user_tasks.html', context)
+
+
 class SailorListView(LoginRequiredMixin, generic.ListView):
     model = Sailor
     paginate_by = 5
@@ -46,7 +68,7 @@ class SailorListView(LoginRequiredMixin, generic.ListView):
         return context
 
     def get_queryset(self):
-        queryset = Sailor.objects.all().select_related("position")
+        queryset = Sailor.objects.select_related("position")
         first_name = self.request.GET.get("first_name")
 
         if first_name:
@@ -101,6 +123,7 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
 
 class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
+
 
 class TaskCreateView(LoginRequiredMixin, generic.CreateView):
     model = Task
@@ -161,17 +184,3 @@ class PositionUpdateView(LoginRequiredMixin, generic.UpdateView):
 class PositionDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Position
     success_url = reverse_lazy("sailors_app:position-list")
-
-
-@login_required
-def toggle_assign_to_task(request, pk):
-    sailor = Sailor.objects.get(id=request.user.id)
-    if (
-        Task.objects.get(id=pk) in sailor.tasks.all()
-    ):
-        sailor.tasks.remove(pk)
-    else:
-        sailor.tasks.add(pk)
-    return HttpResponseRedirect(reverse_lazy(
-        "sailors_app:task-detail", args=[pk])
-    )
