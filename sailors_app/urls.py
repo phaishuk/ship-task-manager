@@ -25,6 +25,11 @@ urlpatterns = [
         name="index"
     ),
     path(
+        "task/<int:pk>/toggle-assign/",
+        toggle_assign_to_task,
+        name="toggle-task-assign",
+    ),
+    path(
         "user_tasks/",
         user_tasks,
         name="user_tasks"
@@ -78,11 +83,6 @@ urlpatterns = [
         "task/<int:pk>/delete/",
         TaskDeleteView.as_view(),
         name="task-delete"
-    ),
-    path(
-        "task/<int:pk>/toggle-assign/",
-        toggle_assign_to_task,
-        name="toggle-task-assign",
     ),
     path(
         "positions/",

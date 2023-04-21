@@ -26,16 +26,19 @@ class SailorAdmin(UserAdmin):
 
 
 @admin.register(Task)
-class SailorAdmin(admin.ModelAdmin):
+class TaskAdmin(admin.ModelAdmin):
     search_fields = ("name",)
+    list_display = (
+        "name", "task_type", "priority", "is_completed", "deadline"
+    )
     list_filter = ("priority",)
 
 
 @admin.register(Position)
-class SailorAdmin(admin.ModelAdmin):
+class PositionAdmin(admin.ModelAdmin):
     search_fields = ("name",)
 
 
 @admin.register(TaskType)
-class SailorAdmin(admin.ModelAdmin):
+class TaskTypeAdmin(admin.ModelAdmin):
     search_fields = ("name",)
