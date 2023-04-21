@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models import Case, Value, When, CharField
 from django.urls import reverse
 
 
@@ -55,7 +56,15 @@ class Task(models.Model):
     assignees = models.ManyToManyField(Sailor, related_name="tasks")
 
     class Meta:
-        ordering = ["-priority", "deadline"]
+        ordering = [
+            Case(
+                When(priority='high', then=Value(1)),
+                When(priority='middle', then=Value(2)),
+                default=Value(3),
+                output_field=CharField()
+            ),
+            'deadline',
+        ]
 
     def __str__(self):
         return f"{self.name}"
