@@ -6,6 +6,9 @@ from django.urls import reverse
 class Position(models.Model):
     name = models.CharField(max_length=255)
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
         return f"{self.name}"
 
@@ -17,6 +20,10 @@ class Sailor(AbstractUser):
         default=8
     )
     board_number = models.CharField(max_length=255, unique=True)
+
+    class Meta:
+        verbose_name = "sailor"
+        verbose_name_plural = "sailors"
 
     def __str__(self):
         return f"{self.username} ({self.position})"
@@ -46,6 +53,9 @@ class Task(models.Model):
     priority = models.CharField(max_length=10, choices=PRIORITY_LEVEL)
     task_type = models.ForeignKey(to=TaskType, on_delete=models.CASCADE)
     assignees = models.ManyToManyField(Sailor, related_name="tasks")
+
+    class Meta:
+        ordering = ["-priority", "deadline"]
 
     def __str__(self):
         return f"{self.name}"
