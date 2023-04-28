@@ -1,0 +1,15 @@
+{#<form action="" method="get" class="form-inline" style="margin-bottom: 20px;">#}
+{#  {{ first_name }}#}
+{#  <input type="submit" value="🔍" class="btn btn-secondary">#}
+{#</form>#}
+
+{% load crispy_forms_filters %}
+<form action="" method="get" class="form-inline w-100" style="margin-bottom: 20px;">
+  <div class="d-flex" style="width: 300px;">
+    <div class="flex-grow-1">
+      {{ first_name|crispy }}
+    </div>
+    <input type="submit" value="🔍" class="btn btn-outline-secondary shadow">
+
+  </div>
+</form>

@@ -4,38 +4,39 @@
   <h1>
     Positions list
   </h1>
-  <a href="{% url 'sailors_app:position-create' %}" class="btn btn-primary link-to-page">
-      Create
+  <a href="{% url 'sailors_app:position-create' %}" class="btn btn-primary link-to-page" style="margin-bottom: 20px;">
+      Create position
   </a>
     {% include "includes/search_input_form_position&task.html" %}
-  {% if position_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
+  <div class="card card-body border-0 shadow table-wrapper table-responsive">
+    {% if position_list %}
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="border-gray-200">Name</th>
+            <th class="border-gray-200">Update</th>
+            <th class="border-gray-200">Delete</th>
+          </tr>
+        </thead>
 
-      {% for position in position_list %}
-        <tr>
-          <td>
-              {{ position.id }}
-          </td>
-          <td>
-            <a href="{% url "sailors_app:position-detail" pk=position.id %} "> {{ position.name }}</a>
-          </td>
-          <td>
-            <a href="{% url "sailors_app:position-update" pk=position.id %} "><strong>Update</strong></a>
-          </td>
-          <td>
-            <a href="{% url "sailors_app:position-delete" pk=position.id %} "><strong>Delete</strong></a>
-          </td>
-        </tr>
-      {% endfor %}
-    </table>
-
-  {% else %}
-      <p>There are no positions in the service.</p>
-  {% endif %}
+        {% for position in position_list %}
+          <tr>
+            <td>
+              <u><a href="{% url "sailors_app:position-detail" pk=position.id %} "> {{ position.name }}</a></u>
+            </td>
+            <td>
+              <a href="{% url "sailors_app:position-update" pk=position.id %}">Update</a>
+            </td>
+            <td>
+              <a href="{% url "sailors_app:position-delete" pk=position.id %}" style="color: red">
+                Delete
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+  </div>
+    {% else %}
+        <p>There are no positions in the service.</p>
+    {% endif %}
 {% endblock %}

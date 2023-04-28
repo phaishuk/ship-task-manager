@@ -1,39 +1,58 @@
+<!--
+
+=========================================================
+* Volt Free - Bootstrap 5 Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  {% block title %}<title>Ship tasks</title>{% endblock %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-        crossorigin="anonymous">
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<head> 
+  {% include 'includes/head.html' %}
+  {% block extrastyle %}{% endblock extrastyle %}
+  {% block extrahead %}{% endblock extrahead %}
 </head>
 
-<body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-2">
+  {% block nav %}
+    {% include 'includes/nav.html' %}
+  {% endblock nav %}
 
-      {% block sidebar %}
-        {% include "includes/sidebar.html" %}
-      {% endblock %}
+  {% block sidebar %}
+    {% include 'includes/sidebar.html' %}
+  {% endblock sidebar %}
 
-    </div>
-    <div class="col-sm-10 ">
+  <main class="content">
+    {% block header %}
+      {% include 'includes/navigation.html' %}
+    {% endblock header %}
 
-      {% block content %}{% endblock %}
+    {% block content %}{% endblock content %}
 
-      {% block pagination %}
+    {% block pagination %}
         {% include "includes/pagination.html" %}
-      {% endblock %}
+    {% endblock %}
 
-    </div>
-  </div>
-</div>
-</body>
+    {% block theme_settings %}
+      {% include 'includes/theme-settings.html' %}
+    {% endblock theme_settings %}
 
-</html>
+    {% block footer %}
+      {% include 'includes/footer.html' %}
+    {% endblock footer %}
+
+  </main>
+
+  {% include 'includes/scripts.html' %}
+  {% block extra_js %}{% endblock extra_js %}
+<body>

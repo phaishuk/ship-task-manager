@@ -79,6 +79,7 @@ class SailorListView(LoginRequiredMixin, generic.ListView):
 class SailorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Sailor
     queryset = Sailor.objects.prefetch_related("tasks__assignees")
+    paginate_by = 5
 
 
 class SailorCreateView(LoginRequiredMixin, generic.CreateView):

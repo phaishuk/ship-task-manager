@@ -1,12 +1,20 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-  <h2> Tasks assigned for {{ user.username }}</h2>
-  <ul>
-    {% for task in tasks %}
-      <li><a href="{% url "sailors_app:task-detail" pk=task.id %} ">{{ task.name }}</a></li>
-    {% empty %}
-      <li>There no tasks for {{ user.username }}</li>
-    {% endfor %}
-  </ul>
+  <h2> Tasks assigned for you dear <strong style="color: green">{{ user.username }}</strong></h2>
+  <div class="card card-body border-0 shadow table-wrapper table-responsive">
+    <ul>
+      {% for task in tasks %}
+        <li>
+          <a href="{% url "sailors_app:task-detail" pk=task.id %} ">
+            <u>
+              {{ task.name }}
+            </u>
+          </a>
+        </li>
+      {% empty %}
+        <li>There no tasks for {{ user.username }}</li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}

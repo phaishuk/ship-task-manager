@@ -1,25 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>
-    Username: {{ sailor.username }}
-  </h1>
+
+  <h1>{{ sailor.username }}</h1>
 
   <p><strong>First name:</strong> {{ sailor.first_name }}</p>
   <p><strong>Last name:</strong> {{ sailor.last_name }}</p>
   <p><strong>Position:</strong> {{ sailor.position }}</p>
 
-  <div class="ml-3">
-    <h4>Tasks assigned to {{ sailor.first_name }}:</h4>
+  <h3>Tasks assigned </h3>
 
-    {% for task in sailor.tasks.all %}
-        <hr>
-        <p><strong>Name:</strong> {{ task.name }}</p>
-        <p><strong>Description:</strong> {{ task.description }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{task.id}}</p>
+  {% for task in sailor.tasks.all %}
+    <hr>
+    <div class="card card-body border-0 shadow table-wrapper table-responsive">
+      <div class="col-12 col-xl-7 px-xl-0">
+        <div class="d-none d-sm-block">
+          <h3 class="fw-extrabold mb-2">
+            <a href="{% url "sailors_app:task-detail" pk=task.id %} ">
+              <u>{{ task.name }}</u>
+            </a>
+          </h3>
+        </div>
+        <small class="d-flex align-items-center text-gray-500">
+          {{ task.description }}
+        </small>
+        <div class="small d-flex mt-1">
+        </div>
+      </div>
+    </div>
 
-    {% empty %}
-      <p>No tasks assigned!</p>
-    {% endfor %}
-  </div>
+  {% empty %}
+    <p>No tasks assigned!</p>
+  {% endfor %}
+
 {% endblock %}

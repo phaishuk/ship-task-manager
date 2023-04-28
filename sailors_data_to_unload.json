@@ -1136,6 +1136,13 @@
     }
 },
 {
+    "model": "sailors_app.tasktype",
+    "pk": 6,
+    "fields": {
+        "name": "Other"
+    }
+},
+{
     "model": "sailors_app.task",
     "pk": 1,
     "fields": {
