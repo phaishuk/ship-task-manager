@@ -26,3 +26,4 @@ six==1.16.0
 soupsieve==2.4.1
 sqlparse==0.4.3
 whitenoise==6.4.0
+python-dotenv~=1.0.0

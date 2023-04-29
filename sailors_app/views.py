@@ -35,7 +35,7 @@ def index(request):
 def toggle_assign_to_task(request, pk):
     sailor = Sailor.objects.get(id=request.user.id)
     if (
-        Task.objects.get(id=pk) in sailor.tasks.all()
+            Task.objects.get(id=pk) in sailor.tasks.all()
     ):
         sailor.tasks.remove(pk)
     else:

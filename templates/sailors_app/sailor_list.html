@@ -4,51 +4,51 @@
   <h1>
     Sailors list
   </h1>
-   <a href="{% url 'sailors_app:sailor-create' %}" class="btn btn-primary link-to-page" style="margin-bottom: 20px">
-      Create sailor
-   </a>
-      {% include "includes/search_input_form_sailor.html" %}
-    <div class="card card-body border-0 shadow table-wrapper table-responsive">
-      {% if sailor_list %}
+  <a href="{% url 'sailors_app:sailor-create' %}" class="btn btn-primary link-to-page" style="margin-bottom: 20px">
+    Create sailor
+  </a>
+  {% include "includes/search_input_form_sailor.html" %}
+  <div class="card card-body border-0 shadow table-wrapper table-responsive">
+    {% if sailor_list %}
       <table class="table table-hover">
         <thead>
-          <tr>
-            <th class="border-gray-200">Username</th>
-            <th class="border-gray-200">First name</th>
-            <th class="border-gray-200">Last name</th>
-            <th class="border-gray-200">Position</th>
-            <th class="border-gray-200">Update</th>
-            <th class="border-gray-200">Delete</th>
-          </tr>
+        <tr>
+          <th class="border-gray-200">Username</th>
+          <th class="border-gray-200">First name</th>
+          <th class="border-gray-200">Last name</th>
+          <th class="border-gray-200">Position</th>
+          <th class="border-gray-200">Update</th>
+          <th class="border-gray-200">Delete</th>
+        </tr>
         </thead>
 
-      {% for sailor in sailor_list %}
-        <tr>
-          <td>
-            <a href="{{ sailor.get_absolute_url }}">
-              <u>{{ sailor.username }}</u>
-              {% if user == sailor %} <strong style="color: green">(Me)</strong> {% endif %}
-            </a>
-          </td>
-          <td>{{ sailor.first_name }}</td>
-          <td>{{ sailor.last_name }}</td>
-          <td>{{ sailor.position }}</td>
-          <td>
-            <a href="{% url 'sailors_app:sailor-update' pk=sailor.id %}">
-              Update
-            </a>
-          </td>
-          <td>
-            <a href="{% url 'sailors_app:sailor-delete' pk=sailor.id %}" style="color: red">
-              Delete
-            </a>
-          </td>
-        </tr>
-      {% endfor %}
+        {% for sailor in sailor_list %}
+          <tr>
+            <td>
+              <a href="{{ sailor.get_absolute_url }}">
+                <u>{{ sailor.username }}</u>
+                {% if user == sailor %} <strong style="color: green">(Me)</strong> {% endif %}
+              </a>
+            </td>
+            <td>{{ sailor.first_name }}</td>
+            <td>{{ sailor.last_name }}</td>
+            <td>{{ sailor.position }}</td>
+            <td>
+              <a href="{% url 'sailors_app:sailor-update' pk=sailor.id %}">
+                Update
+              </a>
+            </td>
+            <td>
+              <a href="{% url 'sailors_app:sailor-delete' pk=sailor.id %}" style="color: red">
+                Delete
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
 
       </table>
-      {% else %}
-        <p>There are no sailors in the service.</p>
-      {% endif %}
-    </div>
+    {% else %}
+      <p>There are no sailors in the service.</p>
+    {% endif %}
+  </div>
 {% endblock %}
