@@ -30,7 +30,7 @@ urlpatterns = [
         name="toggle-task-assign",
     ),
     path(
-        "task/<int:pk>/change-is-complete",
+        "task/<int:pk>/change-is-complete/",
         ToggleChangeIsCompleteView.as_view(),
         name="toggle-change-is-complete"
     ),
