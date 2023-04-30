@@ -24,6 +24,5 @@ urlpatterns = [
                   path("admin/", admin.site.urls),
                   path("", include("sailors_app.urls", namespace="sailors_app")),
                   path("accounts/", include("django.contrib.auth.urls")),
-                  path("__debug__/", include("debug_toolbar.urls")),
                   path('', include('admin_volt.urls')),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
