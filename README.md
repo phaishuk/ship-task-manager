@@ -11,6 +11,11 @@ Here you have a general opportunities:
 
 ## Installation
 
+**Important!** Asure that you receive `.env` file from me before installation. 
+This file has all necessary sensitive data for project. Allocate it on the root folder, because without this project 
+doesn't work. If we agree your review of this project, but you haven't received
+`.env` yet please contact me on my telegram messenger (`@phaishuk`), or other available way.
+
 > 👉 Download the code 
 
 ```angular2html
