@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -33,7 +33,7 @@ def index(request):
 
 @login_required
 def toggle_assign_to_task(request, pk):
-    sailor = Sailor.objects.get(id=request.user.id)
+    sailor = get_object_or_404(Sailor, id=request.user.id)
     if (
             Task.objects.get(id=pk) in sailor.tasks.all()
     ):
@@ -43,6 +43,15 @@ def toggle_assign_to_task(request, pk):
     return HttpResponseRedirect(reverse_lazy(
         "sailors_app:task-detail", args=[pk])
     )
+
+
+@login_required
+def toggle_change_is_complete(request, pk):
+    task = get_object_or_404(Task, id=pk)
+    task.is_completed = not task.is_completed
+    task.save()
+
+    return redirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required
@@ -101,6 +110,7 @@ class SailorDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
+    form_class = TaskForm
     paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):

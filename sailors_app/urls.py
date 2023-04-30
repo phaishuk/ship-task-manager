@@ -9,7 +9,7 @@ from sailors_app.views import (
     PositionUpdateView, PositionDeleteView,
     SailorListView, SailorDetailView, SailorCreateView, SailorUpdateView,
     SailorDeleteView,
-    toggle_assign_to_task,
+    toggle_assign_to_task, toggle_change_is_complete,
 )
 
 app_name = "sailors_app"
@@ -28,6 +28,11 @@ urlpatterns = [
         "task/<int:pk>/toggle-assign/",
         toggle_assign_to_task,
         name="toggle-task-assign",
+    ),
+    path(
+        "task/<int:pk>/change-is-complete",
+        toggle_change_is_complete,
+        name="toggle-change-is-complete"
     ),
     path(
         "user_tasks/",

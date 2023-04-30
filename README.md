@@ -30,14 +30,7 @@ pip install -r requirements.txt
 > 👉 Set Up Database
 
 ```angular2html
-python manage.py makemigrations
 python manage.py migrate
-```
-
-> 👉 Load some data to database
-
-```angular2html
-python manage.py loaddata sailors_data_to_unload.json  
 ```
 
 > 👉 Start the app

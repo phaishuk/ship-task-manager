@@ -83,15 +83,16 @@ class SailorUpdateForm(forms.ModelForm):
 
 
 class TaskForm(forms.ModelForm):
+
+    class Meta:
+        model = Task
+        fields = "__all__"
+
     assignees = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )
-
-    class Meta:
-        model = Task
-        fields = "__all__"
 
 
 class SearchSailors(forms.Form):

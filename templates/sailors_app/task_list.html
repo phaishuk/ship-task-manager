@@ -30,7 +30,15 @@
               {{ task.priority }}
             </td>
             <td>
-              {{ task.is_completed }}
+              {% if task.is_completed %}
+                <a href="{% url 'sailors_app:toggle-change-is-complete' pk=task.id %}" class="btn btn-secondary link-to-page">
+                  Undo
+                </a>
+              {% else %}
+                <a href="{% url 'sailors_app:toggle-change-is-complete' pk=task.id %}" class="btn btn-primary link-to-page">
+                  Mark complete
+                </a>
+              {% endif %}
             </td>
             <td>
               {{ task.deadline }}
