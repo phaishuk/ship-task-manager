@@ -2,14 +2,14 @@ from django.contrib import admin
 from django.urls import path
 
 from sailors_app.views import (
-    index, user_tasks,
+    IndexView, UserTasksView,
     TaskListView, TaskDetailView, TaskCreateView, TaskUpdateView,
     TaskDeleteView,
     PositionListView, PositionDetailView, PositionCreateView,
     PositionUpdateView, PositionDeleteView,
     SailorListView, SailorDetailView, SailorCreateView, SailorUpdateView,
     SailorDeleteView,
-    toggle_assign_to_task, toggle_change_is_complete,
+    ToggleAssignToTaskView, ToggleChangeIsCompleteView,
 )
 
 app_name = "sailors_app"
@@ -21,22 +21,22 @@ urlpatterns = [
     ),
     path(
         "",
-        index,
+        IndexView.as_view(),
         name="index"
     ),
     path(
         "task/<int:pk>/toggle-assign/",
-        toggle_assign_to_task,
+        ToggleAssignToTaskView.as_view(),
         name="toggle-task-assign",
     ),
     path(
         "task/<int:pk>/change-is-complete",
-        toggle_change_is_complete,
+        ToggleChangeIsCompleteView.as_view(),
         name="toggle-change-is-complete"
     ),
     path(
         "user_tasks/",
-        user_tasks,
+        UserTasksView.as_view(),
         name="user_tasks"
     ),
     path(

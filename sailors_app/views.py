@@ -1,7 +1,6 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -12,54 +11,57 @@ from sailors_app.forms import (
 from sailors_app.models import Task, Sailor, Position
 
 
-@login_required
-def index(request):
-    num_tasks = Task.objects.count()
-    num_sailors = Sailor.objects.count()
-    num_positions = Position.objects.count()
+class IndexView(LoginRequiredMixin, generic.TemplateView):
 
-    num_visits = request.session.get("num_visits", 0)
-    request.session["num_visits"] = num_visits + 1
+    template_name = "sailors_app/index.html"
 
-    context = {
-        "num_tasks": num_tasks,
-        "num_sailors": num_sailors,
-        "num_positions": num_positions,
-        "num_visits": num_visits + 1,
-    }
-
-    return render(request, "sailors_app/index.html", context=context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        num_visits = self.request.session.get("num_visits", 0) + 1
+        self.request.session["num_visits"] = num_visits
+        context["num_visits"] = num_visits
+        context["num_tasks"] = Task.objects.count()
+        context["num_sailors"] = Sailor.objects.count()
+        context["num_positions"] = Position.objects.count()
+        return context
 
 
-@login_required
-def toggle_assign_to_task(request, pk):
-    sailor = get_object_or_404(Sailor, id=request.user.id)
-    if (
-            Task.objects.get(id=pk) in sailor.tasks.all()
-    ):
-        sailor.tasks.remove(pk)
-    else:
-        sailor.tasks.add(pk)
-    return HttpResponseRedirect(reverse_lazy(
-        "sailors_app:task-detail", args=[pk])
-    )
+class ToggleAssignToTaskView(LoginRequiredMixin, generic.View):
+
+    @staticmethod
+    def get(request, pk):
+        sailor = get_object_or_404(Sailor, id=request.user.id)
+        if Task.objects.get(id=pk) in sailor.tasks.all():
+            sailor.tasks.remove(pk)
+        else:
+            sailor.tasks.add(pk)
+        return HttpResponseRedirect(reverse_lazy(
+            "sailors_app:task-detail", args=[pk]
+        ))
 
 
-@login_required
-def toggle_change_is_complete(request, pk):
-    task = get_object_or_404(Task, id=pk)
-    task.is_completed = not task.is_completed
-    task.save()
+class ToggleChangeIsCompleteView(LoginRequiredMixin, generic.View):
 
-    return redirect(request.META.get('HTTP_REFERER'))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+    @staticmethod
+    def get(request, pk):
+        task = get_object_or_404(Task, id=pk)
+        task.is_completed = not task.is_completed
+        task.save()
+
+        return redirect(request.META.get("HTTP_REFERER"))
 
 
-@login_required
-def user_tasks(request):
-    sailor = Sailor.objects.get(id=request.user.id)
-    tasks = sailor.tasks.all()
-    context = {'tasks': tasks}
-    return render(request, 'sailors_app/user_tasks.html', context)
+class UserTasksView(LoginRequiredMixin, generic.ListView):
+    model = Task
+    template_name = "sailors_app/user_tasks.html"
+    context_object_name = "tasks"
+
+    def get_queryset(self):
+        sailor = Sailor.objects.get(id=self.request.user.id)
+        return sailor.tasks.all()
 
 
 class SailorListView(LoginRequiredMixin, generic.ListView):
