@@ -11,10 +11,6 @@ Here you have a general opportunities:
 
 ## Installation
 
-**Important!** Asure that you receive `.env` file from me before installation. 
-This file has all necessary sensitive data for project. Allocate it on the root folder, because without this project 
-doesn't work. If we agree your review of this project, but you haven't received
-`.env` yet please contact me on my telegram messenger (`@phaishuk`), or other available way.
 
 > 👉 Download the code 
 
@@ -22,6 +18,13 @@ doesn't work. If we agree your review of this project, but you haven't received
 git clone https://github.com/phaishuk/ship-task-manager
 cd ship-task-manager
 ```
+
+> 👉 .env file
+
+This project contains some sensitive data, so an `.env` file is required.
+Rename the `.env.sample` file to `.env` or create an empty `.env` 
+and copy the contents of `.env.sample` there.
+
 
 > 👉 Install modules via `VENV`  
 
