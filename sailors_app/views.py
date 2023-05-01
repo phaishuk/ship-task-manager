@@ -12,7 +12,6 @@ from sailors_app.models import Task, Sailor, Position
 
 
 class IndexView(LoginRequiredMixin, generic.TemplateView):
-
     template_name = "sailors_app/index.html"
 
     def get_context_data(self, **kwargs):
