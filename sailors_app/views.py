@@ -41,9 +41,6 @@ class ToggleAssignToTaskView(LoginRequiredMixin, generic.View):
 
 class ToggleChangeIsCompleteView(LoginRequiredMixin, generic.View):
 
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
-
     @staticmethod
     def get(request, pk):
         task = get_object_or_404(Task, id=pk)
