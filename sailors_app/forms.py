@@ -37,9 +37,9 @@ class SailorCreationForm(UserCreationForm):
 
 
 class SailorUpdateForm(forms.ModelForm):
-    old_password = forms.CharField(widget=forms.PasswordInput)
-    new_password = forms.CharField(widget=forms.PasswordInput)
-    confirm_password = forms.CharField(widget=forms.PasswordInput)
+    old_password = forms.CharField(widget=forms.PasswordInput, required=False)
+    new_password = forms.CharField(widget=forms.PasswordInput, required=False)
+    confirm_password = forms.CharField(widget=forms.PasswordInput, required=False)
 
     class Meta:
         model = Sailor
@@ -50,7 +50,7 @@ class SailorUpdateForm(forms.ModelForm):
 
     def clean_old_password(self):
         old_password = self.cleaned_data.get("old_password")
-        if not self.instance.check_password(old_password):
+        if old_password and not self.instance.check_password(old_password):
             raise forms.ValidationError(
                 "The old password is incorrect."
             )
@@ -58,14 +58,28 @@ class SailorUpdateForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
+        old_password = self.cleaned_data.get("old_password")
         new_password = cleaned_data.get("new_password")
         confirm_password = cleaned_data.get("confirm_password")
+        if (new_password or confirm_password) and not old_password:
+            raise forms.ValidationError(
+                "Please enter your current password to set a new password."
+            )
+        if confirm_password and not new_password:
+            raise forms.ValidationError(
+                "Please enter a new password before confirm password."
+            )
+        if new_password and not confirm_password:
+            raise forms.ValidationError(
+                "Please confirm your password."
+            )
         if new_password and confirm_password and (
                 new_password != confirm_password
         ):
             raise forms.ValidationError(
                 "The new passwords do not match."
             )
+
         return cleaned_data
 
     def save(self, commit=True):
