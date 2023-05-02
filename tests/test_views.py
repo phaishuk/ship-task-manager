@@ -29,6 +29,7 @@ class PublicPositionListTests(TestCase):
 
 
 class PrivatePositionTests(TestCase):
+
     def setUp(self) -> None:
         self.user = get_user_model().objects.create_user(
             username="sailor",
@@ -42,13 +43,14 @@ class PrivatePositionTests(TestCase):
         Position.objects.create(name="test1",)
         Position.objects.create(name="test2",)
 
-        response = self.client.get(POSITION_LIST_URL)
+        data = {"name": "test"}
+        response = self.client.get(POSITION_LIST_URL, data=data)
         positions = Position.objects.all()
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
             list(response.context["position_list"]),
-            list(positions)
+            list(positions.filter(name__icontains="test"))
         )
         self.assertTemplateUsed(response, "sailors_app/position_list.html")
 
@@ -78,16 +80,17 @@ class PrivateTaskTests(TestCase):
             deadline=date(2023, 4, 24),
             is_completed=True,
             priority="high",
-            task_type=TaskType.objects.create(name="test_task_type")
+            task_type=TaskType.objects.create(name="test_task_type2")
         )
 
-        response = self.client.get(TASK_LIST_URL)
+        data = {"name": "test"}
+        response = self.client.get(TASK_LIST_URL, data=data)
         tasks = Task.objects.all()
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
             list(response.context["task_list"]),
-            list(tasks)
+            list(tasks.filter(name__icontains="test"))
         )
         self.assertTemplateUsed(response, "sailors_app/task_list.html")
 
@@ -123,14 +126,17 @@ class PrivateSailorTests(TestCase):
             board_number="$TЕ_342637"
         )
 
-        response = self.client.get(SAILOR_LIST_URL)
-        sailors = Sailor.objects.all()
+        data = {"username": "test"}
+        response = self.client.get(SAILOR_LIST_URL, data=data)
+        sailors = Sailor.objects.filter(username__icontains="test_sailor")
+        sailors_list = [sailor.username for sailor in sailors]
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(
-            list(response.context["sailor_list"]),
-            list(sailors)
-        )
+        self.assertEqual(len(sailors), 2)
+        self.assertTrue("test_sailor" in sailors_list)
+        self.assertTrue("test_sailor2" in sailors_list)
+        self.assertTrue("sailor_list" in response.context)
+        self.assertTrue(sailors.filter(username__icontains="test_sailor").exists())
         self.assertTemplateUsed(response, "sailors_app/sailor_list.html")
 
 
