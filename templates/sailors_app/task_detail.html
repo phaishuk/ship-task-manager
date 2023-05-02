@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    {{ task.name }}
+  </h1>
+  <h2>Description:</h2>
+  <h5><i>{{ task.description }}</i></h5>
+  <form method="POST" action="{% url 'sailors_app:toggle-task-assign' pk=task.id %}">
+    {% csrf_token %}
+    {% if task in user.tasks.all %}
+      <button type="submit" class="btn btn-danger link-to-page">
+        Delete me from this task
+      </button>
+    {% else %}
+      <button type="submit" class="btn btn-success link-to-page">
+        Assign me to this task
+      </button>
+    {% endif %}
+  </form>
+  <h4 style="margin-top: 30px;">
+    See assignees below:
+  </h4>
+  <hr>
+  <ul>
+    {% for assignee in task.assignees.all %}
+      <div class="card card-body shadow table-wrapper table-responsive">
+        <table>
+          <tr>
+            <td>
+              <strong>Username:</strong> {{ assignee.username }} <br>
+              <strong>Full name:</strong> {{ assignee.first_name }} {{ assignee.last_name }} <br>
+              <strong>Position:</strong> {{ assignee.position }}<br>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    {% endfor %}
+  </ul>
+{% endblock %}
