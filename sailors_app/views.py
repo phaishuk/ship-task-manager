@@ -28,12 +28,13 @@ class IndexView(LoginRequiredMixin, generic.TemplateView):
 class ToggleAssignToTaskView(LoginRequiredMixin, generic.View):
 
     @staticmethod
-    def get(request, pk):
+    def post(request, pk):
         sailor = get_object_or_404(Sailor, id=request.user.id)
-        if Task.objects.get(id=pk) in sailor.tasks.all():
-            sailor.tasks.remove(pk)
+        task = get_object_or_404(Task, id=pk)
+        if task in sailor.tasks.all():
+            sailor.tasks.remove(task)
         else:
-            sailor.tasks.add(pk)
+            sailor.tasks.add(task)
         return HttpResponseRedirect(reverse_lazy(
             "sailors_app:task-detail", args=[pk]
         ))
@@ -42,7 +43,7 @@ class ToggleAssignToTaskView(LoginRequiredMixin, generic.View):
 class ToggleChangeIsCompleteView(LoginRequiredMixin, generic.View):
 
     @staticmethod
-    def get(request, pk):
+    def post(request, pk):
         task = get_object_or_404(Task, id=pk)
         task.is_completed = not task.is_completed
         task.save()

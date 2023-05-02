@@ -31,13 +31,19 @@
             </td>
             <td>
               {% if task.is_completed %}
-                <a href="{% url 'sailors_app:toggle-change-is-complete' pk=task.id %}" class="btn btn-secondary link-to-page">
-                  Undo
-                </a>
+                <form action="{% url 'sailors_app:toggle-change-is-complete' pk=task.id %}" method="POST"
+                      class="d-inline">
+                  {% csrf_token %}
+                  <input type="hidden" name="is_completed" value="False">
+                  <button type="submit" class="btn btn-secondary link-to-page">Undo</button>
+                </form>
               {% else %}
-                <a href="{% url 'sailors_app:toggle-change-is-complete' pk=task.id %}" class="btn btn-primary link-to-page">
-                  Mark complete
-                </a>
+                <form action="{% url 'sailors_app:toggle-change-is-complete' pk=task.id %}" method="POST"
+                      class="d-inline">
+                  {% csrf_token %}
+                  <input type="hidden" name="is_completed" value="True">
+                  <button type="submit" class="btn btn-primary link-to-page">Mark complete</button>
+                </form>
               {% endif %}
             </td>
             <td>

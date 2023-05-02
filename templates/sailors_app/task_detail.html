@@ -6,16 +6,18 @@
   </h1>
   <h2>Description:</h2>
   <h5><i>{{ task.description }}</i></h5>
-
-  {% if task in user.tasks.all %}
-    <a href="{% url 'sailors_app:toggle-task-assign' pk=task.id %}" class="btn btn-danger link-to-page">
-      Delete me from this task
-    </a>
-  {% else %}
-    <a href="{% url 'sailors_app:toggle-task-assign' pk=task.id %}" class="btn btn-success link-to-page">
-      Assign me to this task
-    </a>
-  {% endif %}
+  <form method="POST" action="{% url 'sailors_app:toggle-task-assign' pk=task.id %}">
+    {% csrf_token %}
+    {% if task in user.tasks.all %}
+      <button type="submit" class="btn btn-danger link-to-page">
+        Delete me from this task
+      </button>
+    {% else %}
+      <button type="submit" class="btn btn-success link-to-page">
+        Assign me to this task
+      </button>
+    {% endif %}
+  </form>
   <h4 style="margin-top: 30px;">
     See assignees below:
   </h4>
