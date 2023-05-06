@@ -1,5 +1,11 @@
 ## [Ship-task-manager](https://github.com/phaishuk/ship-task-manager)
 
+
+
+[Click here to visit site (credential below)](https://sailors-app.onrender.com/) <br>
+[Click here to visit open repository](https://github.com/phaishuk/ship-task-manager)
+
+
 Imagine a time when we didn't have a cutting edge technologies and we have to organize our time efficiently.
 This is a small web TODO application where we try to make easier life for sailors, and agregate their tasks in one place.
 
