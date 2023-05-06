@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "") != "False"
 
-ALLOWED_HOSTS = ["127.0.0.1", "sailors-app.onrender.com/"]
+ALLOWED_HOSTS = ["127.0.0.1", "sailors-app.onrender.com"]
 
 # Application definition
 
